@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    table, th, td {
+        border: 1px solid black;
+        border-collapse: collapse;
+    }
+</style>
+<body>
+    <!-- <%=users %> -->
+    <table style="width: 100%;">
+        <tr>
+            <td>Email</td>
+            <td>First name</td>
+            <td>Last name</td>
+            <td>Address</td>
+            <td>Action</td>
+        </tr>
+        <% for(let i=0; i<users.length; i++) { %>
+            <tr>
+                <td><%=users[i].email %></td>
+                <td><%=users[i].firstName %></td>
+                <td><%=users[i].lastName %></td>
+                <td><%=users[i].address %></td>
+                <td>
+                    <a href="/edit-crud?id=<%=users[i].id %>">
+                        <button type="button">Edit</button>
+                    </a>
+                    <a href="/delete-crud?id=<%=users[i].id %>">
+                        <button type="button">Delete</button>
+                    </a>
+                </td>
+            </tr>
+        <% } %>
+    </table>
+</body>
+</html>
