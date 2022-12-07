@@ -25,9 +25,7 @@ const postCRUD = async (req, res) => {
 
 const readCRUD = async (req, res) => {
   const users = await CRUDService.getAllUser();
-  return res.render("display-crud.ejs", {
-    users: users,
-  });
+  return res.status(200).json(users);
 };
 
 const editCRUD = async (req, res) => {
